@@ -1,0 +1,191 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.column{
+  background-color: white;
+}
+
+.message-body{
+  height:125px;
+  
+}
+main{
+  width:100%;
+  margin:0 auto;
+}
+
+.card-user{
+  background-image: url("https://placeimg.com/480/150/people/grayscale"); 
+background-size: cover;
+background-repeat: no-repeat;
+  width:100%;
+  height:150px;
+
+}
+
+.card-companies{
+  background-image: url("https://placeimg.com/480/150/animals/grayscale"); 
+background-size: cover;
+background-repeat: no-repeat;
+  width:100%;
+  height:150px;
+
+}
+
+.card-portfolio{
+  background-image: url("https://placeimg.com/480/150/tech/grayscale"); 
+background-size: cover;
+background-repeat: no-repeat;
+width:100%;
+height:150px;
+
+}
+
+.card-header{
+  background-color: rgba(171,170,170,0.85);
+}
+
+.card-header p{
+  color:white;
+}
+
+.message a:not(.button):not(.tag){
+  text-decoration: none;
+}
+
+.tableImages{
+  width:175px !important; 
+  height:auto;
+  margin-right: 50px;
+}
+
+table td{
+
+  max-width: 150px;
+  vertical-align: central;
+
+}
+
+section img{
+  width:75%;
+  height:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section h1{
+
+  padding-left: 35%;
+}
+
+.stockList{
+  background-color: rgb(245, 245, 245);
+}
+
+.stockList div{
+  -webkit-box-shadow: 14px 22px 43px -2px rgba(52,130,133,1);
+-moz-box-shadow: 14px 22px 43px -2px rgba(52,130,133,1);
+box-shadow: 14px 22px 43px -2px rgba(52,130,133,1);
+margin:0 auto;
+  width:100%;
+  margin-top: 15px;
+  height:175px;
+  padding-top:20px;
+  padding-left:6%;
+}
+
+
+
+.stockList div strong{
+  vertical-align: center;
+  font-size: 0.6em;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+.stockList div img{
+  width:100px;
+  max-height:125px;
+  min-height:75px;
+  margin:auto 50px;
+
+}
+
+.stockList div h1{
+  font-size: 4.5em;
+  text-align: center;
+  margin-left:-8%;
+}
+.stockList div .button{
+  margin-top:50px;
+  min-width:175px;
+
+}
+
+article table{
+  margin:0 auto;
+  text-align: center;
+}
+
+article table tr:nth-child(2n) {
+  background-color: rgba(0,209,178,0.2)
+  
+}
+
+#stockPort{
+  width:90%;
+}
+
+#title{
+  width:80%;
+}
+
+#title strong{
+  margin:0 auto;
+}
+
+#singleStockImage{
+  max-width: 300px;
+   -webkit-box-shadow: 14px 22px 43px -2px rgba(52,130,133,1);
+-moz-box-shadow: 14px 22px 43px -2px rgba(52,130,133,1);
+box-shadow: 14px 22px 43px -2px rgba(52,130,133,1);
+margin:0 auto;
+}
+
+#singleStockDescription{
+  margin-top: 50px;
+  width:75%;
+  margin:50px auto;
+}
+
+#singleStockDescription h1{
+ font-size: 2em ;
+ padding-left:20%;
+}
