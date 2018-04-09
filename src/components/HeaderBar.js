@@ -1,23 +1,32 @@
 import React from 'react';
 
 class HeaderBar extends React.Component {
-    constructor(){
+    constructor() {
         super()
         this.state = {
             menuDrop: false
         }
         this.menuDropDown = this.menuDropDown.bind(this);
+        this.requireAuth = this.requireAuth.bind(this);
     }
-    
-    
-    menuDropDown(prev){
+
+
+    menuDropDown(prev) {
         alert(this.state.menuDrop)
-         this.setState((prevState) => ({
-          menuDrop: !prevState.menuDrop
+        this.setState((prevState) => ({
+            menuDrop: !prevState.menuDrop
         }));
     }
-    
-    render(){
+
+    requireAuth(nextState, replace) {
+        alert(this.props.loggedIn);
+    }
+
+    componentDidMount() {
+        this.requireAuth();
+    }
+
+    render() {
         return (
             <nav className="navbar is-primary">
                 <div className="navbar-brand">
@@ -34,14 +43,8 @@ class HeaderBar extends React.Component {
                     if();
                 </div>
              </nav>
-         );
+        );
     }
-    
+
 }
 export default HeaderBar;
-
-
-
-
-
-

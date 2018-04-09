@@ -58,6 +58,15 @@ background-repeat: no-repeat;
 
 }
 
+.card-stocks{
+  background-image: url("https://placeimg.com/480/150/animals/grayscale"); 
+background-size: cover;
+background-repeat: no-repeat;
+  width:100%;
+  height:150px;
+
+}
+
 .card-portfolio{
   background-image: url("https://placeimg.com/480/150/tech/grayscale"); 
 background-size: cover;

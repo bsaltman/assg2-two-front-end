@@ -50,7 +50,7 @@ class NavBar extends React.Component {
                 <Link className="navbar-item is-tab "
                 to={ {pathname: "/Users"}}>Users</Link>
                 <Link className="navbar-item is-tab "
-                to={ {pathname: "/Stocks"}}>Stocks</Link>
+                to={ {pathname: "/companies"}}>Companies</Link>
             </div>
           </div>
         </nav>
