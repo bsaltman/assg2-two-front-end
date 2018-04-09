@@ -1,7 +1,8 @@
 //based on template https://github.com/dansup/bulma-templates/blob/master/templates/login.html
 import React, { Component } from 'react';
 import axios from 'axios';
-import md5 from 'md5';
+//import md5 from 'md5';
+const md5 = window.md5.js;
 class Login extends Component {
   constructor() {
     super();
