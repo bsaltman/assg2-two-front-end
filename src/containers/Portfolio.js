@@ -2,19 +2,21 @@
  import { Link } from 'react-router-dom';
  import PortfolioSummaryView from './PortfolioSummaryView.js'
  import axios from 'axios';
+ //import HeaderApp from '../components/HeaderApp.js';
  class PortfolioPage extends Component {
      constructor() {
          super();
          this.updateCompanies = this.updateCompanies.bind(this);
          this.toggleSummary = this.toggleSummary.bind(this);
-
+         this.logout = this.logout.bind(this);
      }
 
      state = {
          userPortfolio: [],
          companies: [],
          pricesClose: [],
-         summary: false
+         summary: false,
+         userId: 2
      }
 
      toggleSummary() {
@@ -22,6 +24,9 @@
              summary: !prevState.summary
          }));
 
+     }
+     logout() {
+         window.location.pathname = '/';
      }
 
      updateCompanies() {
@@ -48,7 +53,8 @@
 
 
      componentDidMount() {
-         axios.get('https://rocky-temple-19031.herokuapp.com/portfolio/3')
+         this.setState({ userId: this.props.match.params.userId })
+         axios.get('https://rocky-temple-19031.herokuapp.com/portfolio/' + this.props.match.params.userId)
              .then(res => {
                  const userPortfolio = res.data;
 
@@ -77,17 +83,44 @@
          if (this.state.summary) {
              return (
 
-                 <PortfolioSummaryView toggleSummary={this.toggleSummary} updatedPorfolio= {this.state.userPortfolio}/>
+                 <PortfolioSummaryView toggleSummary={this.toggleSummary} updatedPorfolio= {this.state.userPortfolio} id={this.props.match.params.userId}/>
              )
          }
          else {
              return (
+                 <div>
+                       <nav className="navbar is-primary">
+          <div className="navbar-brand">
+            <div className="navbar-item">
+              <strong>BEN</strong>
+            </div>
+            <div className="navbar-burger burger" onClick={this.toggleMenu}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        
+          <div id="navbarExampleTransparentExample" className={"navbar-menu " + (this.state.menuDrop ? "is-active" : "")}>
+            <div className="navbar-start">
+            <Link className="navbar-item is-tab "
+                to={ {pathname: "/home/" + this.state.userId}}>Home</Link>
+         <Link className="navbar-item is-tab "
+            to={ {pathname:"/portfolio/" + this.state.userId}}>Portfolio</Link>
+         <Link className="navbar-item is-tab "
+            to={ {pathname:"/companies/" + this.state.userId}}>Companies</Link>
+         <Link className="navbar-item is-tab "
+            to={ {pathname:"/stockVisualizer/" + this.state.userId}}>StockVisualizer</Link>
+            </div>
+          </div>
+          <button className = 'button is-info' onClick={this.logout}>Log out</button>
+        </nav>
                  <article className="section columns is-centered">
                 <div class="card column is-two-thirds"> 
                 <nav class="breadcrumb" aria-label="breadcrumbs">
                   <ul>
                     <li><Link className="navbar-item is-tab "
-                to={ {pathname: "/home"}}>Home</Link></li>
+                to={ {pathname: "/home/" + this.state.userId }}>Home</Link></li>
                 <li><Link className="navbar-item is-tab "
                 to={ {pathname: "#"}}>Portfolio</Link></li>
 
@@ -133,6 +166,7 @@
                   </article>
                 </div>
             </article>
+            </div>
              )
          }
      }

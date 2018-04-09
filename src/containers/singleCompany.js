@@ -11,6 +11,7 @@ class singleCompany extends Component {
         super();
         this.chartPopulate = this.chartPopulate.bind(this);
         this.toggleView = this.toggleView.bind(this);
+        this.logout = this.logout.bind(this);
     }
 
 
@@ -22,6 +23,9 @@ class singleCompany extends Component {
         chartDataSet: []
 
 
+    }
+    logout() {
+        window.location.pathname = '/';
     }
 
     toggleView() {

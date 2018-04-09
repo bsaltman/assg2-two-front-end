@@ -1,8 +1,9 @@
 //based on template https://github.com/dansup/bulma-templates/blob/master/templates/login.html
 import React, { Component } from 'react';
+//import HeaderApp from '../components/HeaderApp.js';
 import axios from 'axios';
 //import md5 from 'md5';
-const md5 = window.md5.js;
+const md5 = window.md5;
 class Login extends Component {
   constructor() {
     super();
@@ -10,7 +11,8 @@ class Login extends Component {
   }
 
   state = {
-    userInfo: []
+    userInfo: [],
+    wrong: false
   }
 
   submitForm(e) {
@@ -22,10 +24,10 @@ class Login extends Component {
         let password = document.getElementById("passwordInput").value;
         password = md5(password + userInfo[0].salt);
         if (password === userInfo[0].password) {
-          alert("correct")
+          window.location.pathname = '/home/' + userInfo[0].id;
         }
         else {
-          alert("wrong");
+          alert("false");
         }
       });
 

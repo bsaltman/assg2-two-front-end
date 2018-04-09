@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class aboutBen extends Component {
-    
+    constructor() {
+        super();
+        this.logout = this.logout.bind(this);
+    }
+    logout() {
+        window.location.pathname = '/';
+    }
+
     render() {
 
         return (
-        <article className="section columns">
+            <article className="section columns">
                 <section className="column is-three-fifths is-offset-one-fifth">
                 
                 <nav class="breadcrumb" aria-label="breadcrumbs">
@@ -33,14 +40,14 @@ class aboutBen extends Component {
                 </section>
        
             </article>
-          
-          
-          
-          
 
 
-        ); 
-    }   
+
+
+
+
+        );
+    }
 
 }
 
