@@ -14,6 +14,9 @@ class Login extends Component {
     userInfo: [],
     wrong: false
   }
+  logout() {
+    window.location.pathname = '/';
+  }
 
   submitForm(e) {
     axios.get('https://rocky-temple-19031.herokuapp.com/users/' + document.getElementById("emailInput").value)

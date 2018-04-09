@@ -1,16 +1,17 @@
 // /prices/month-prices/:symb/:month
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class CompanyListView extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.monthChosen = this.monthChosen.bind(this);
         this.logout = this.logout.bind(this);
     }
     state = {
         companyMonthData: [],
+        userId: 0
 
 
     }
@@ -31,32 +32,7 @@ class CompanyListView extends Component {
 
         return (
             <div>
-                       <nav className="navbar is-primary">
-          <div className="navbar-brand">
-            <div className="navbar-item">
-              <strong>BEN</strong>
-            </div>
-            <div className="navbar-burger burger" onClick={this.toggleMenu}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
-          </div>
-        
-          <div id="navbarExampleTransparentExample" className={"navbar-menu " + (this.state.menuDrop ? "is-active" : "")}>
-            <div className="navbar-start">
-            <Link className="navbar-item is-tab "
-                to={ {pathname: "/home/" + this.props.match.params.userId}}>Home</Link>
-         <Link className="navbar-item is-tab "
-            to={ {pathname:"/portfolio/" + this.props.match.params.userId}}>Portfolio</Link>
-         <Link className="navbar-item is-tab "
-            to={ {pathname:"/companies/" + this.props.match.params.userId}}>Companies</Link>
-         <Link className="navbar-item is-tab "
-            to={ {pathname:"/stockVisualizer/" + this.props.match.params.userId}}>StockVisualizer</Link>
-            </div>
-          </div>
-          <button className = 'button is-info' onClick={this.logout}>Log out</button>
-        </nav>
+                      
             <div class="field">
               <div class="control">
                 <div class="select is-primary">

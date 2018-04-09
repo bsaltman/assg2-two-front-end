@@ -191,10 +191,11 @@ margin:0 auto;
 #singleStockDescription{
   margin-top: 50px;
   width:75%;
+  font:0.5em;
   margin:50px auto;
 }
 
 #singleStockDescription h1{
- font-size: 2em ;
+ font-size: 1em ;
  padding-left:20%;
 }

@@ -133,13 +133,14 @@ class singleCompany extends Component {
     render() {
         if (this.state.toggleChart) {
             return (
+
                 <article className="section columns">
                 <section className="column is-three-fifths is-offset-one-fifth">
                 
                 <nav class="breadcrumb" aria-label="breadcrumbs">
                   <ul>
                     <li><Link className="navbar-item is-tab "
-                to={ {pathname: "/home"}}>Home</Link></li>
+                to={ {pathname: "/home/"}}>Home</Link></li>
                 
                 <li><Link className="navbar-item is-tab "
                 to={ {pathname: "/companies"}}>Companies</Link></li>
@@ -155,11 +156,11 @@ class singleCompany extends Component {
                                     <img alt ="" id="singleStockImage"  src={"/logos/" + obj.symbol + ".svg"}></img>
                             
                                     <div id ="singleStockDescription" className ="box">
-                                        <h1>Symbol: {obj.symbol}</h1>
-                                        <h1>Name: {obj.name}</h1>
-                                        <h1>Sector: {obj.sector}</h1>
-                                        <h1>Sub-Industry: {obj.subIndustry}</h1>
-                                        <h1>Address: {obj.address}</h1>
+                                        <h4>Symbol: {obj.symbol}</h4>
+                                        <h4>Name: {obj.name}</h4>
+                                        <h4>Sector: {obj.sector}</h4>
+                                        <h4>Sub-Industry: {obj.subIndustry}</h4>
+                                        <h4>Address: {obj.address}</h4>
                                     </div>
                                     </div>
                                     )
@@ -181,6 +182,33 @@ class singleCompany extends Component {
         }
         else
             return (
+                <div>
+                <nav className="navbar is-primary">
+          <div className="navbar-brand">
+            <div className="navbar-item">
+              <strong>BEN</strong>
+            </div>
+            <div className="navbar-burger burger" onClick={this.toggleMenu}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        
+          <div id="navbarExampleTransparentExample" className={"navbar-menu " + (this.state.menuDrop ? "is-active" : "")}>
+            <div className="navbar-start">
+            <Link className="navbar-item is-tab "
+                to={ {pathname: "/home/" + this.state.userId}}>Home</Link>
+         <Link className="navbar-item is-tab "
+            to={ {pathname:"/portfolio/" + this.state.userId}}>Portfolio</Link>
+         <Link className="navbar-item is-tab "
+            to={ {pathname:"/companies/" + this.state.userId}}>Companies</Link>
+         <Link className="navbar-item is-tab "
+            to={ {pathname:"/stockVisualizer/" + this.state.userId}}>StockVisualizer</Link>
+            </div>
+          </div>
+          <button className = 'button is-info' onClick={this.logout}>Log out</button>
+        </nav>
                 <article className="section columns">
                 <section className="column is-three-fifths is-offset-one-fifth">
                 
@@ -220,7 +248,7 @@ class singleCompany extends Component {
             
                </section>
        
-            </article>)
+            </article></div>)
     }
 }
 

@@ -121,8 +121,7 @@
                   <ul>
                     <li><Link className="navbar-item is-tab "
                 to={ {pathname: "/home/" + this.state.userId }}>Home</Link></li>
-                <li><Link className="navbar-item is-tab "
-                to={ {pathname: "#"}}>Portfolio</Link></li>
+                <li>Portfolio</li>
 
                   </ul>
                 </nav>
