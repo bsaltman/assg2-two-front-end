@@ -14,7 +14,9 @@ class HomeBrowser extends Component {
         };
     }
 
-
+    stateTest() {
+        alert(this.state.test)
+    }
     render() {
         return (
             <main>

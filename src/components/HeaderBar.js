@@ -18,13 +18,6 @@ class HeaderBar extends React.Component {
         }));
     }
 
-    requireAuth(nextState, replace) {
-        alert(this.props.loggedIn);
-    }
-
-    componentDidMount() {
-        this.requireAuth();
-    }
 
     render() {
         return (

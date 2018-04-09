@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Chart from 'chart.js'
 import CompanyListView from '../components/CompanyListView.js'
+const Chart = window.Chart;
+
 
 
 class singleCompany extends Component {
